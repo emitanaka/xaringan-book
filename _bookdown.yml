@@ -1,0 +1,11 @@
+book_filename: "xaringan-book"
+repo: https://github.com/emitanaka/xaringan-book/
+output_dir: _book
+clean: [packages.bib]
+language:
+  label:
+    fig: "FIGURE "
+    tab: "TABLE "
+  ui:
+    chapter_name: "Chapter "
+delete_merged_file: true

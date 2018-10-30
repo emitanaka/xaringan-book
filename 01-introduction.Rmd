@@ -1,0 +1,14 @@
+# Introduction {#intro}
+
+
+In late 2016, Yihui discovered remark.js (Bang 2018) and loved it at the first sight. A few weeks later in the R Markdown ecosystem (Allaire et al. 2018), an R package was born and named xaringan (???), which nobody knows how to pronounce (including Yihui himself, because it was adapted from the Japanese manga series Naruto by Kishimoto (2007)). Anyway, this package has gained some popularity, and some CSS ninja have started contributing themes to it. One day, Yihui was thinking about creating a gallery for existing themes in xaringan. After a few replies in the [Github issue](https://github.com/yihui/xaringan/issues/172#issuecomment-434065692), he realized there might be enough topics on xaringan for a short book. Accidentally, he invented a new development model for writing books: the Github-issue-driven book development.
+
+
+Ideas so far:
+
+This could include the basics:
+
+* Installation 
+* Motivation - Why slideshows using R Markdown (should mention about ioslides too and differences to it)
+* Structure of the book
+* etc

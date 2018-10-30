@@ -1,0 +1,5 @@
+# Features {#feature}
+
+Ideas so far:
+
+* `xaringan` specific features not in remark.js

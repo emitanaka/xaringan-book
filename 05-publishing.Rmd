@@ -1,0 +1,7 @@
+# Publishing {#publishing}
+
+Ideas so far:
+
+* Where to host (netlify and github pages)
+* Offline 
+* Any chance that RPubs to support xaringan in the future? Nice if tag feature is added to RPubs too. Or connect to some blogdown site with something similar to https://www.overleaf.com/latex/templates

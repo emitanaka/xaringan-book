@@ -1,0 +1,17 @@
+--- 
+title: "xaringan: Delivering Presentation with R Markdown"
+author: "Emi Tanaka, Joseph Casillas, Eric Nantz, Yihui Xie"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: emitanaka/xaringan-book
+description: "The authors are keeping an air of mystery about this book but all shall be revealed in 2019. "
+---
+
+# Preface {-}
+
+Hello.

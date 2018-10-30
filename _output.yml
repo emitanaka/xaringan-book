@@ -1,0 +1,27 @@
+bookdown::gitbook:
+  css: css/style.css
+  config:
+    toc:
+      collapse: none
+      before: |
+        <li><a href="./">xaringan: Delivering Presentations with R Markdown</a></li>
+      after: |
+        <li><a href="https://github.com/emitanaka/xaringan-book" target="blank">Published with bookdown</a></li>
+    edit: https://github.com/emitanaka/xaringan-book/edit/master/%s
+    download: ["pdf"]
+    sharing:
+      github: yes
+      facebook: no
+bookdown::pdf_book:
+  includes:
+    in_header: latex/preamble.tex
+    after_body: latex/after_body.tex
+  latex_engine: xelatex
+  citation_package: natbib
+  keep_tex: yes
+  template: null
+  pandoc_args: [--top-level-division=chapter, --wrap=none]
+  toc_depth: 3
+  toc_unnumbered: no
+  toc_appendix: yes
+  highlight_bw: yes
