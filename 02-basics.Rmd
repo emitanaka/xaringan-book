@@ -3,6 +3,11 @@
 
 Ideas so far:
 
+* Getting started
+* Creating slides
+* Templates
+* Images
+* Inserting R code
 * HTML/CSS/JS basics 
 * Markdown basics (necessary?)
 * R Markdown basics -> or talk about the relevant part to show difference to the usually knitting where Rmd is parsed through remark.js instead of pandoc. (ioslides is reveal.js I think?)
