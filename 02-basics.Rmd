@@ -3,11 +3,36 @@
 
 Ideas so far:
 
-* Getting started
-* Creating slides
-* Templates
-* Images
-* Inserting R code
-* HTML/CSS/JS basics 
-* Markdown basics (necessary?)
-* R Markdown basics -> or talk about the relevant part to show difference to the usually knitting where Rmd is parsed through remark.js instead of pandoc. (ioslides is reveal.js I think?)
+- Getting started
+	- RMarkdown + xaringan = 😍
+		- From RStudio
+			- "File -> New File -> R Markdown -> From Template -> Ninja Presentation"
+		- From scratch
+			- like any othere .Rmd file... output: xaringan::moon_reader
+			- "Provides an R Markdown output format xaringan::moon_reader as a 
+			wrapper for remark.js, and you can use it in the YAML metadata"
+	- Generating your slides
+		- knit
+		- infinite_moon_reader: RStudio Addin that allows you to update your slides in 
+		real time
+- General syntax
+	- quick comparison with general markdown
+	- headers, separating slides
+	- columns
+		- two columns
+		- pull left/right
+	- math
+- Making it yours
+	- Images
+		- knitr
+		- background images
+	- Templates
+		- names(xaringan:::list_css())
+	- HTML/CSS/JS basics 
+- Inserting R code
+	- analyses, plots and tables (some html widgets)
+	- inline
+	- knitr chunks
+	- code highlighting (`*`, `{{}}`, and `#<<`; `highlight.output`)
+- Summary
+
