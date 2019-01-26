@@ -1,38 +1,87 @@
 # Basics {#basics}
 
+In this chapter you will get up and moving with your first HTML presentation 
+using `xaringan`.
+Specifically, we will cover the basics regarding getting started and 
+generating your HTML slides, as well as talk about some markdown and 
+`xaringan`-specific syntax considerations. 
+Next, you will learn how to incorporate some light customizations to give 
+your slides a more personal touch. 
+This chapter concludes with some examples of best practices for including R 
+code into your `xaringan` presentations.
 
-Ideas so far:
 
-- Getting started
-	- RMarkdown + xaringan = 😍
-		- From RStudio
-			- "File -> New File -> R Markdown -> From Template -> Ninja Presentation"
-		- From scratch
-			- like any othere .Rmd file... output: xaringan::moon_reader
-			- "Provides an R Markdown output format xaringan::moon_reader as a 
-			wrapper for remark.js, and you can use it in the YAML metadata"
-	- Generating your slides
-		- knit
-		- infinite_moon_reader: RStudio Addin that allows you to update your slides in 
-		real time
-- General syntax
-	- quick comparison with general markdown
-	- headers, separating slides
-	- columns
-		- two columns
-		- pull left/right
-	- math
-- Making it yours
-	- Images
-		- knitr
-		- background images
-	- Templates
-		- names(xaringan:::list_css())
-	- HTML/CSS/JS basics 
-- Inserting R code
-	- analyses, plots and tables (some html widgets)
-	- inline
-	- knitr chunks
-	- code highlighting (`*`, `{{}}`, and `#<<`; `highlight.output`)
-- Summary
+
+
+## Getting started
+
+- RMarkdown + xaringan = 😍 (general paragraph)
+
+### From RStudio
+
+- "File -> New File -> R Markdown -> From Template -> Ninja Presentation"
+
+### From scratch
+
+- like any othere .Rmd file... output: xaringan::moon_reader
+- "Provides an R Markdown output format xaringan::moon_reader as a 
+wrapper for remark.js, and you can use it in the YAML metadata"
+
+### Generating your slides
+
+- knit
+- infinite_moon_reader: RStudio Addin that allows you to update your slides in 
+real time
+
+
+
+
+## General syntax
+
+### quick comparison with general markdown
+
+### headers, separating slides
+
+### Multi-column slides
+
+- two columns
+- pull left/right
+
+### math
+
+
+
+
+## Making it yours
+
+### Images, gifs
+
+- knitr
+- background images
+
+### Templates
+
+- names(xaringan:::list_css())
+
+### HTML/CSS/JS basics 
+
+- iframes
+	- include other websites, shiny apps
+- basic customizations (CSS, JS)
+	- colors, counters, tweets
+
+
+
+
+## Incorporating R code
+
+- analyses, plots and tables (some html widgets)
+- inline
+- knitr chunks
+- code highlighting (`*`, `{{}}`, and `#<<`; `highlight.output`)
+
+
+
+
+## Summary
 
