@@ -1,3 +1,71 @@
+--- 
+title: "xaringan: Delivering Presentation with R Markdown"
+author: "Emi Tanaka, Joseph Casillas, Eric Nantz, Yihui Xie"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: emitanaka/xaringan-book
+description: "The authors are keeping an air of mystery about this book but all shall be revealed in 2019. "
+---
+
+# Preface {-}
+
+Hello.
+
+<!--chapter:end:index.Rmd-->
+
+# About the Authors {#author .unnumbered}
+
+We are a team of shinobi and kunoichi who wish to share the fun and secrets of the **xaringan** package with you.
+
+
+## Emi Tanaka {-}
+
+Lead author, and the ninja theme author.
+
+## Joseph Casillas {-}
+
+Contributor of xaringan.
+
+## Eric Nantz {-}
+
+Host of the R Podcast.
+
+## Yihui Xie {-}
+
+Yihui Xie (<https://yihui.name>) is a software engineer at RStudio (<https://www.rstudio.com>). He earned his PhD from the Department of Statistics, Iowa State University. He is interested in interactive statistical graphics and statistical computing. As an active R user, he has authored several R packages, such as **knitr**, **bookdown**, **blogdown**, **xaringan**, **tinytex**, **animation**, **DT**, **tufte**, **formatR**, **fun**, **xfun**, **mime**, **highr**, **servr**, and **Rd2roxygen**, among which the **animation** package won the 2009 John M. Chambers Statistical Software Award (ASA). He also co-authored a few other R packages, including **shiny**, **rmarkdown**, and **leaflet**.
+
+He has authored two books, _Dynamic Documents with knitr_ [@xie2015], and _bookdown: Authoring Books and Technical Documents with R Markdown_ [@xie2016], and co-authored the book, _blogdown: Creating Websites with R Markdown_ [@xie2017].
+
+In 2006, he founded the Capital of Statistics (<https://cosx.org>), which has grown into a large online community on statistics in China. He initiated the Chinese R conference in 2008, and has been involved in organizing R conferences in China since then. During his PhD training at Iowa State University, he won the Vince Sposito Statistical Computing Award (2011) and the Snedecor Award (2012) in the Department of Statistics.
+
+He occasionally rants on Twitter (<https://twitter.com/xieyihui>, well not so much these days), and most of the time you can find him on GitHub (<https://github.com/yihui>).
+
+He enjoys spicy food as much as classical Chinese literature and is a master hacker freeing the frustation of thousands of people that would have needed to repeatedly copy-and-paste the R output and saving science with the gift of reproducible research.  
+
+<!--chapter:end:00-author.Rmd-->
+
+# Introduction {#intro}
+
+
+In late 2016, Yihui discovered remark.js (Bang 2018) and loved it at the first sight. A few weeks later in the R Markdown ecosystem (Allaire et al. 2018), an R package was born and named xaringan (???), which nobody knows how to pronounce (including Yihui himself, because it was adapted from the Japanese manga series Naruto by Kishimoto (2007)). Anyway, this package has gained some popularity, and some CSS ninja have started contributing themes to it. One day, Yihui was thinking about creating a gallery for existing themes in xaringan. After a few replies in the [Github issue](https://github.com/yihui/xaringan/issues/172#issuecomment-434065692), he realized there might be enough topics on xaringan for a short book. Accidentally, he invented a new development model for writing books: the Github-issue-driven book development.
+
+
+Ideas so far:
+
+This could include the basics:
+
+* Installation 
+* Motivation - Why slideshows using R Markdown (should mention about ioslides too and differences to it)
+* Structure of the book
+* etc
+
+<!--chapter:end:01-introduction.Rmd-->
+
 # Basics {#basics}
 
 In this chapter you will get up and moving with your first HTML presentation 
@@ -345,4 +413,52 @@ Right column information here
 
 
 ## Summary
+
+
+<!--chapter:end:02-basics.Rmd-->
+
+# remark.js  {#remarkjs}
+
+Ideas so far:
+
+Features of the remark.js. Can draw out from wiki: https://github.com/gnab/remark/wiki
+
+<!--chapter:end:03-remarkjs.Rmd-->
+
+# Features {#feature}
+
+Ideas so far:
+
+* `xaringan` specific features not in remark.js
+
+<!--chapter:end:04-features.Rmd-->
+
+# Publishing {#publishing}
+
+Ideas so far:
+
+* Where to host (netlify and github pages)
+* Offline 
+* Any chance that RPubs to support xaringan in the future? Nice if tag feature is added to RPubs too. Or connect to some blogdown site with something similar to https://www.overleaf.com/latex/templates
+
+<!--chapter:end:05-publishing.Rmd-->
+
+# Advanced Topics {#advanced}
+
+
+So advanced that you need to train for weeks to know what it is. 
+
+<!--chapter:end:06-advanced.Rmd-->
+
+# Ideas
+
+Some inspirations and theme showcase?
+
+<!--chapter:end:07-ideas.Rmd-->
+
+`r if (knitr:::is_html_output()) '
+# References {-}
+'`
+
+<!--chapter:end:08-references.Rmd-->
 
