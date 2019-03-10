@@ -2,3 +2,18 @@
 
 
 So advanced that you need to train for weeks to know what it is. 
+
+
+<!-- to add ?
+
+slide properties (better for remark chapter?)
+  - name
+  - class
+  - template
+  - layout
+-->
+
+<!--
+- basic customization (CSS, JS)
+	- colors, counters, tweets
+-->

@@ -170,6 +170,18 @@ and ordered lists:
 3. This is 3
 ```
 
+It is also possible to write complex mathematical formulas using LaTeX syntax 
+via mathjax. 
+You can write in-line math equations by surrounding your code with dollar 
+signs, \$. 
+For example, the formula to calculate standard scores is 
+$z = \frac{X - \mu}{\sigma}$, which is written in LaTeX as 
+`$z = \frac{X - \mu}{\sigma}$`. 
+You can automatically center and increase the size of the formula by using 
+double dollar signs, `$$`. 
+
+$$y_{i} = \alpha + \beta x_{i} + \epsilon_{i}$$
+
 We won't cover all of the details of Markdown syntax here, but rather highlight 
 some of the `xaringan`-specific features.
 
@@ -199,6 +211,64 @@ Feel free to copy this into your file and click "Knit".
 The output should render like this: 
 
 ![basics-slide-example](img/02_basics-slide-example.png)
+
+### Alignment
+
+We can control the alignment of the content in the slide in a manner of ways. 
+In this subsection we will focus on customing vertical and horizontal alignment 
+by 1) assigning a class to an entire slide, or 2) using html content classes to 
+align specific elements. 
+
+To change the alignment of the entire slide we set some `class` paramenters at 
+the top of the slide. For vertical alignment we can use "top" (default), 
+"middle" or "bottom". For horizontal alignment we can use "left" (default), 
+"center" or "right". For example, to align the content of the previous slide 
+in the middle-center of the slide we would adjust the markdown as follow: 
+
+```{r, basics-alignment-example-1, eval=F}
+class: center, middle
+
+# What I do on the weekends
+
+## Hobbies
+
+Run in the park  
+Walk my dogs  
+Create presentations in `xaringan`
+```
+
+![basics-alignment-example_1](img/02_basics-alignment-example_1.png)
+
+Note: I removed the unordered list because they look rather odd when the 
+content is centered horizontally. Also, notice that there are two (2) spaces 
+after each line, which is how linebreaks are interepreted in Markdown syntax. 
+
+The second method we can use to align content is by using content classes. 
+If you are experienced using HTML/CSS this will be nothing new. 
+If not, for our purposes, you can think of a content class as a simplified 
+method for specifying how HTML elements are displayed. 
+In order to do this we precede the CSS specification with a period and then 
+wrap the content using brackets. 
+This is a common technique for customizing in `xaringan` (more below). 
+For example, in order to align a specific element to the center we would use 
+`.center[]`. 
+Here I will update the previous example by only centering the slide section and 
+the subsection headers. 
+
+```{r, basics-alignment-example-2, eval=F}
+.center[
+# What I do on the weekends
+
+## Hobbies
+]
+
+- Run in the park 
+- Walk my dogs 
+- Create presentations in `xaringan`
+```
+
+![basics-alignment-example_2](img/02_basics-alignment-example_2.png)
+
 
 ### Incremental slides
 
@@ -260,12 +330,44 @@ This sentence is no longer displayed incrementally.
 - Sometimes
 ```
 
+### Notes and comments
+
+We often need to include notes in our slides and comments in our code. 
+In `xaringan` you can create comments using the standard comment format used 
+in HTML: `<!-- content here -->`. 
+You can put whatever you want between the two arrows and it will not be 
+rendered in your slides. 
+If you want to include notes in your slides you can do so by adding content 
+after a series of three questions marks, `???`. 
+The notes only become visible if you switch to presenter view by pressing "p" 
+in the browser. 
+Here we add a comment and some notes to out slides:
+
+```{r, basics-comments-notes, eval=F}
+# What I do on the weekends
+
+## Hobbies
+
+<!-- think of interesting hobbies to include here -->
+
+- Run in the park 
+- Walk my dogs 
+- Create presentations in `xaringan`
+
+???
+
+This is a presenter note that is accessed by pressing "p".
+```
+
+![basics-comments-notes](img/02_basics-comments-notes.png)
+
 ### Multi-column slides
 
 Another common feature of presentations is to display content in two columns. 
-This is easibly acheived in `xaringan` using a bit of remark.js syntax. 
-You will recognize the remark.js syntax because it begins with a period and 
-and opening bracket, `.[`, and end with a closing bracket, `]`. 
+This is easibly acheived in `xaringan` using HTML content classes. 
+Again, you will recognize the use of content classes because they begin with a 
+period and and opening bracket, `.[`, and end with a closing bracket, `]`. 
+You will learn more about these in chapter 3. 
 Specifically, there are two options for creating two-column layouts. 
 The first option is to use `.left-column[]` and `.right-column[]`. 
 For example: 
@@ -308,41 +410,168 @@ Right column information here
 
 ![basic-two-column-2](img/02_basics-two-column_2.png)
 
-### math
-
-
-
-
 ## Making it yours
 
-### Images, gifs
+In this section you will learn how to further customize your `xaringan` slides 
+by adding images and gifs; embedding video, webpages, and shiny apps; and 
+using theme templates.
 
-- knitr
-- background images
+### Images and gifs
 
-### Templates
+A great way to spice up your presentation is to include images, memes, and 
+gifs. 
+This can be accomplished in a number of ways in `xaringan`. 
+We will cover three. 
+The first and simplist method is to use Markdown syntax: `![caption](img file)`. 
+You put any information you want as the caption between brackets. 
+The path to the image or a link to an online image goes between parenthesis. 
+For example, the RStudio icon is hosted at the following web 
+address: https://www.rstudio.com/wp-content/uploads/2014/06/RStudio-Ball.png. 
+We can include this image in our presentation. 
 
-- names(xaringan:::list_css())
+```{r, basics-img-ex1, eval=F}
+# Including images
 
-### HTML/CSS/JS basics 
+### Markdown
 
-- iframes
-	- include other websites, shiny apps
-- basic customization (CSS, JS)
-	- colors, counters, tweets
+![RStudio icon](https://www.rstudio.com/wp-content/uploads/2014/
+06/RStudio-Ball.png)
+```
+
+The downside of this method is that you cannot currently control the size of 
+the image that is rendered. 
+If you are comfortable with HTML, you can include the image and control the 
+width like so: 
+
+```{r, basics-img-ex2, eval=F}
+# Including images
+
+### HTML
+
+<img width="300", src="https://www.rstudio.com/wp-content/uploads/
+2014/06/RStudio-Ball.png">
+```
+
+A third way to include an image in your presentation is to use a `knitr` code 
+chunk and the function `include_graphics`, which is part of the `knitr` package. 
+
+````
+```{r, out.width = "300px"}`r ''`
+knitr::include_graphics("https://www.rstudio.com/wp-content/uploads/
+2014/06/RStudio-Ball.png")
+```
+````
+
+And a final method is include the image as a background image by placing 
+`background-image: url()` at the top of the slide with the relevant link. 
+We can then control the size and position of the image by adding 
+`background-size` and `background-position`: 
+
+```{r, basics-include-image, eval=F}
+background-image: url(https://www.rstudio.com/wp-content/uploads/
+2014/06/RStudio-Ball.png)
+background-size: 300px
+background-position: 50% 50%
+```
+
+The `background-position` values refer to the respective horizontal and 
+vertical positions. 
+Regardless of the method you choose, the outcome should look something like 
+this: 
+
+![basics-include-image](img/02_basics-include-image.png){width=50%}
+
+### Embedding video, webpages, and shiny apps
+
+You can make your slides fun and interactive by embedding video or even a 
+shiny app. 
+This process is straightforward using an `iframe`. 
+For example, we can include a youtube video demonstrating the McGurk Effect by 
+embedding the url in an iframe as shown here: 
+
+```{r basics-embedding-video, eval=F}
+# Embedding video with iframes
+
+<iframe width="560" height="315" 
+src="https://www.youtube.com/embed/G-lN8vWm3m0"></iframe>
+```
+
+![basics-embed-vido](img/02_basics-embed-vido.png){width=50%}
+
+If you need to show part of a website in your presentation you can use the 
+same strategy. 
+For example, here I will embed the homepage of aspredicted.org: 
+
+```{r, basics-embed-website, eval=F}
+# Embed website
+
+<iframe src="https://www.aspredicted.org" style="border:none;" 
+height="500" width="100%"></iframe>
+```
+
+![basics-embed-website](img/02_basics-embed-website.png){width=50%}
+
+It is even possible to embed a shiny app in your slides for interactive 
+demonstrations: 
+
+```{r, basics-embed-shiny, eval=F}
+# Embed shiny app
+
+<iframe src="https://jvcasillas.shinyapps.io/shiny_glm/"></iframe>
+```
+
+![basics-embed-shiny](img/02_basics-embed-shiny.png){width=50%}
 
 
+### Theme templates
 
+You can easily change the way your slides look by changing the theme. 
+There are many user contributed `xaringan` themes available. 
+In the console run the following code to see a list of all of the themes 
+currenlty available to you: `names(xaringan:::list_css())`
+
+```{r, themes-list, echo=F}
+names(xaringan:::list_css())
+```
+
+To change the your theme of your slides select one of the themes included in 
+the list above and adjust the YAML front matter to include the css templates 
+as shown here:   
+
+```
+---
+output:
+  xaringan::moon_reader:
+    css: ["rutgers", "rutgers-fonts"]
+---
+```
+
+Try out all of the themes until you find one that you like. 
+If you can't find what you are looking for you can always create your own 
+(more on this in Chapter 6)!
 
 ## Incorporating R code
 
-- analyses, plots and tables (some html widgets)
-- inline
-- knitr chunks
-- code highlighting (`*`, `{{}}`, and `#<<`; `highlight.output`)
+Because your `xaringan` presentation uses the power of R Markdown you can 
+analyse data and produce plots and tables as you normally would. In this 
+section we will brielfy highlight a few `xaringan`-specific features related 
+to knitr chunks and r code. 
 
+
+
+- reuse knitr chunks, print plots later
+- code highlighting (`*`, `{{}}`, and `#<<`; `highlight.output`)
+- include code in presenter notes
 
 
 
 ## Summary
 
+In this chapter you learned the basics of `xaringan`. 
+This included the basics regarding getting started with your first 
+presentation and implementing light customization to personalize your slides. 
+You also learned some handy tricks related to using R code in your `xaringan` 
+presentation. 
+You are well on your way to becoming a presentation ninja. 
+In the next chapter you will learn more about remark.js, the work engine 
+under the hood of `xaringan`. 

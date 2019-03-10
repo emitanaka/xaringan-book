@@ -125,7 +125,7 @@
 
 \title{xaringan: Delivering Presentation with R Markdown}
 \author{Emi Tanaka, Joseph Casillas, Eric Nantz, Yihui Xie}
-\date{2019-03-09}
+\date{2019-03-10}
 
 \begin{document}
 \maketitle
@@ -305,6 +305,10 @@ like so:
 \end{Highlighting}
 \end{Shaded}
 
+It is also possible to write complex mathematical formulas using LaTeX syntax via mathjax. You can write in-line math equations by surrounding your code with dollar signs, \$. For example, the formula to calculate standard scores is \(z = \frac{X - \mu}{\sigma}\), which is written in LaTeX as \texttt{\$z\ =\ \textbackslash{}frac\{X\ -\ \textbackslash{}mu\}\{\textbackslash{}sigma\}\$}. You can automatically center and increase the size of the formula by using double dollar signs, \texttt{\$\$}.
+
+\[y_{i} = \alpha + \beta x_{i} + \epsilon_{i}\]
+
 We won't cover all of the details of Markdown syntax here, but rather highlight some of the \texttt{xaringan}-specific features.
 
 \hypertarget{creating-individual-slides}{%
@@ -330,6 +334,57 @@ Feel free to copy this into your file and click ``Knit''. The output should rend
 \centering
 \includegraphics{img/02_basics-slide-example.png}
 \caption{basics-slide-example}
+\end{figure}
+
+\hypertarget{alignment}{%
+\subsection{Alignment}\label{alignment}}
+
+We can control the alignment of the content in the slide in a manner of ways. In this subsection we will focus on customing vertical and horizontal alignment by 1) assigning a class to an entire slide, or 2) using html content classes to align specific elements.
+
+To change the alignment of the entire slide we set some \texttt{class} paramenters at the top of the slide. For vertical alignment we can use ``top'' (default), ``middle'' or ``bottom''. For horizontal alignment we can use ``left'' (default), ``center'' or ``right''. For example, to align the content of the previous slide in the middle-center of the slide we would adjust the markdown as follow:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{class}\OperatorTok{:}\StringTok{ }\NormalTok{center, middle}
+
+\CommentTok{# What I do on the weekends}
+
+\CommentTok{## Hobbies}
+
+\NormalTok{Run }\ControlFlowTok{in}\NormalTok{ the park  }
+\NormalTok{Walk my dogs  }
+\NormalTok{Create presentations }\ControlFlowTok{in} \StringTok{`}\DataTypeTok{xaringan}\StringTok{`}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{img/02_basics-alignment-example_1.png}
+\caption{basics-alignment-example\_1}
+\end{figure}
+
+Note: I removed the unordered list because they look rather odd when the content is centered horizontally. Also, notice that there are two (2) spaces after each line, which is how linebreaks are interepreted in Markdown syntax.
+
+The second method we can use to align content is by using content classes. If you are experienced using HTML/CSS this will be nothing new. If not, for our purposes, you can think of a content class as a simplified method for specifying how HTML elements are displayed. In order to do this we precede the CSS specification with a period and then wrap the content using brackets. This is a common technique for customizing in \texttt{xaringan} (more below). For example, in order to align a specific element to the center we would use \texttt{.center{[}{]}}. Here I will update the previous example by only centering the slide section and the subsection headers.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{.center[}
+\CommentTok{# What I do on the weekends}
+
+\CommentTok{## Hobbies}
+\NormalTok{]}
+
+\OperatorTok{-}\StringTok{ }\NormalTok{Run }\ControlFlowTok{in}\NormalTok{ the park }
+\OperatorTok{-}\StringTok{ }\NormalTok{Walk my dogs }
+\OperatorTok{-}\StringTok{ }\NormalTok{Create presentations }\ControlFlowTok{in} \StringTok{`}\DataTypeTok{xaringan}\StringTok{`}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{img/02_basics-alignment-example_2.png}
+\caption{basics-alignment-example\_2}
 \end{figure}
 
 \hypertarget{incremental-slides}{%
@@ -383,10 +438,39 @@ If you copy this example and Knit your slides you will notice notice that the se
 \end{Highlighting}
 \end{Shaded}
 
+\hypertarget{notes-and-comments}{%
+\subsection{Notes and comments}\label{notes-and-comments}}
+
+We often need to include notes in our slides and comments in our code. In \texttt{xaringan} you can create comments using the standard comment format used in HTML: \texttt{\textless{}!-\/-\ content\ here\ -\/-\textgreater{}}. You can put whatever you want between the two arrows and it will not be rendered in your slides. If you want to include notes in your slides you can do so by adding content after a series of three questions marks, \texttt{???}. The notes only become visible if you switch to presenter view by pressing ``p'' in the browser. Here we add a comment and some notes to out slides:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# What I do on the weekends}
+
+\CommentTok{## Hobbies}
+
+\OperatorTok{<!--}\StringTok{ }\NormalTok{think of interesting hobbies to include here }\OperatorTok{-}\NormalTok{->}
+
+\OperatorTok{-}\StringTok{ }\NormalTok{Run }\ControlFlowTok{in}\NormalTok{ the park }
+\OperatorTok{-}\StringTok{ }\NormalTok{Walk my dogs }
+\OperatorTok{-}\StringTok{ }\NormalTok{Create presentations }\ControlFlowTok{in} \StringTok{`}\DataTypeTok{xaringan}\StringTok{`}
+
+\NormalTok{???}
+
+\NormalTok{This is a presenter note that is accessed by pressing }\StringTok{"p"}\NormalTok{.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{img/02_basics-comments-notes.png}
+\caption{basics-comments-notes}
+\end{figure}
+
 \hypertarget{multi-column-slides}{%
 \subsection{Multi-column slides}\label{multi-column-slides}}
 
-Another common feature of presentations is to display content in two columns. This is easibly acheived in \texttt{xaringan} using a bit of remark.js syntax. You will recognize the remark.js syntax because it begins with a period and and opening bracket, \texttt{.{[}}, and end with a closing bracket, \texttt{{]}}. Specifically, there are two options for creating two-column layouts. The first option is to use \texttt{.left-column{[}{]}} and \texttt{.right-column{[}{]}}. For example:
+Another common feature of presentations is to display content in two columns. This is easibly acheived in \texttt{xaringan} using HTML content classes. Again, you will recognize the use of content classes because they begin with a period and and opening bracket, \texttt{.{[}}, and end with a closing bracket, \texttt{{]}}. You will learn more about these in chapter 3. Specifically, there are two options for creating two-column layouts. The first option is to use \texttt{.left-column{[}{]}} and \texttt{.right-column{[}{]}}. For example:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -432,72 +516,170 @@ As you can see, this divides the left column into approxametely 1/3 of the slide
 \caption{basic-two-column-2}
 \end{figure}
 
-\hypertarget{math}{%
-\subsection{math}\label{math}}
-
 \hypertarget{making-it-yours}{%
 \section{Making it yours}\label{making-it-yours}}
 
-\hypertarget{images-gifs}{%
-\subsection{Images, gifs}\label{images-gifs}}
+In this section you will learn how to further customize your \texttt{xaringan} slides by adding images and gifs; embedding video, webpages, and shiny apps; and using theme templates.
 
-\begin{itemize}
-\tightlist
-\item
-  knitr
-\item
-  background images
-\end{itemize}
+\hypertarget{images-and-gifs}{%
+\subsection{Images and gifs}\label{images-and-gifs}}
 
-\hypertarget{templates}{%
-\subsection{Templates}\label{templates}}
+A great way to spice up your presentation is to include images, memes, and gifs. This can be accomplished in a number of ways in \texttt{xaringan}. We will cover three. The first and simplist method is to use Markdown syntax: \texttt{!{[}caption{]}(img\ file)}. You put any information you want as the caption between brackets. The path to the image or a link to an online image goes between parenthesis. For example, the RStudio icon is hosted at the following web address: \url{https://www.rstudio.com/wp-content/uploads/2014/06/RStudio-Ball.png}. We can include this image in our presentation.
 
-\begin{itemize}
-\tightlist
-\item
-  names(xaringan:::list\_css())
-\end{itemize}
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Including images}
 
-\hypertarget{htmlcssjs-basics}{%
-\subsection{HTML/CSS/JS basics}\label{htmlcssjs-basics}}
+\CommentTok{### Markdown}
 
-\begin{itemize}
-\tightlist
-\item
-  iframes
+\OperatorTok{!}\NormalTok{[RStudio icon](https}\OperatorTok{:}\ErrorTok{//}\NormalTok{www.rstudio.com}\OperatorTok{/}\NormalTok{wp}\OperatorTok{-}\NormalTok{content}\OperatorTok{/}\NormalTok{uploads}\OperatorTok{/}\DecValTok{2014}\OperatorTok{/}
+\DecValTok{06}\OperatorTok{/}\NormalTok{RStudio}\OperatorTok{-}\NormalTok{Ball.png)}
+\end{Highlighting}
+\end{Shaded}
 
-  \begin{itemize}
-  \tightlist
-  \item
-    include other websites, shiny apps
-  \end{itemize}
-\item
-  basic customization (CSS, JS)
+The downside of this method is that you cannot currently control the size of the image that is rendered. If you are comfortable with HTML, you can include the image and control the width like so:
 
-  \begin{itemize}
-  \tightlist
-  \item
-    colors, counters, tweets
-  \end{itemize}
-\end{itemize}
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Including images}
+
+\CommentTok{### HTML}
+
+\OperatorTok{<}\NormalTok{img width=}\StringTok{"300"}\NormalTok{, src=}\StringTok{"https://www.rstudio.com/wp-content/uploads/}
+\StringTok{2014/06/RStudio-Ball.png"}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+A third way to include an image in your presentation is to use a \texttt{knitr} code chunk and the function \texttt{include\_graphics}, which is part of the \texttt{knitr} package.
+
+\begin{verbatim}
+```{r, out.width = "300px"}
+knitr::include_graphics("https://www.rstudio.com/wp-content/uploads/
+2014/06/RStudio-Ball.png")
+```
+\end{verbatim}
+
+And a final method is include the image as a background image by placing \texttt{background-image:\ url()} at the top of the slide with the relevant link. We can then control the size and position of the image by adding \texttt{background-size} and \texttt{background-position}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{background}\OperatorTok{-}\NormalTok{image}\OperatorTok{:}\StringTok{ }\KeywordTok{url}\NormalTok{(https}\OperatorTok{:}\ErrorTok{//}\NormalTok{www.rstudio.com}\OperatorTok{/}\NormalTok{wp}\OperatorTok{-}\NormalTok{content}\OperatorTok{/}\NormalTok{uploads}\OperatorTok{/}
+\DecValTok{2014}\OperatorTok{/}\DecValTok{06}\OperatorTok{/}\NormalTok{RStudio}\OperatorTok{-}\NormalTok{Ball.png)}
+\NormalTok{background}\OperatorTok{-}\NormalTok{size}\OperatorTok{:}\StringTok{ }\NormalTok{300px}
+\NormalTok{background}\OperatorTok{-}\NormalTok{position}\OperatorTok{:}\StringTok{ }\DecValTok{50}\OperatorTok{% 50%}
+\end{Highlighting}
+\end{Shaded}
+
+The \texttt{background-position} values refer to the respective horizontal and vertical positions. Regardless of the method you choose, the outcome should look something like this:
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth,height=\textheight]{img/02_basics-include-image.png}
+\caption{basics-include-image}
+\end{figure}
+
+\hypertarget{embedding-video-webpages-and-shiny-apps}{%
+\subsection{Embedding video, webpages, and shiny apps}\label{embedding-video-webpages-and-shiny-apps}}
+
+You can make your slides fun and interactive by embedding video or even a shiny app. This process is straightforward using an \texttt{iframe}. For example, we can include a youtube video demonstrating the McGurk Effect by embedding the url in an iframe as shown here:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Embedding video with iframes}
+
+\OperatorTok{<}\NormalTok{iframe width=}\StringTok{"560"}\NormalTok{ height=}\StringTok{"315"} 
+\NormalTok{src=}\StringTok{"https://www.youtube.com/embed/G-lN8vWm3m0"}\OperatorTok{>}\ErrorTok{</}\NormalTok{iframe}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth,height=\textheight]{img/02_basics-embed-vido.png}
+\caption{basics-embed-vido}
+\end{figure}
+
+If you need to show part of a website in your presentation you can use the same strategy. For example, here I will embed the homepage of aspredicted.org:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Embed website}
+
+\OperatorTok{<}\NormalTok{iframe src=}\StringTok{"https://www.aspredicted.org"}\NormalTok{ style=}\StringTok{"border:none;"} 
+\NormalTok{height=}\StringTok{"500"}\NormalTok{ width=}\StringTok{"100%"}\OperatorTok{>}\ErrorTok{</}\NormalTok{iframe}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth,height=\textheight]{img/02_basics-embed-website.png}
+\caption{basics-embed-website}
+\end{figure}
+
+It is even possible to embed a shiny app in your slides for interactive demonstrations:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Embed shiny app}
+
+\OperatorTok{<}\NormalTok{iframe src=}\StringTok{"https://jvcasillas.shinyapps.io/shiny_glm/"}\OperatorTok{>}\ErrorTok{</}\NormalTok{iframe}\OperatorTok{>}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth,height=\textheight]{img/02_basics-embed-shiny.png}
+\caption{basics-embed-shiny}
+\end{figure}
+
+\hypertarget{theme-templates}{%
+\subsection{Theme templates}\label{theme-templates}}
+
+You can easily change the way your slides look by changing the theme. There are many user contributed \texttt{xaringan} themes available. In the console run the following code to see a list of all of the themes currenlty available to you: \texttt{names(xaringan:::list\_css())}
+
+\begin{verbatim}
+##  [1] "chocolate-fonts"  "chocolate"        "default-fonts"   
+##  [4] "default"          "duke-blue"        "fc-fonts"        
+##  [7] "fc"               "hygge-duke"       "hygge"           
+## [10] "kunoichi"         "lucy-fonts"       "lucy"            
+## [13] "metropolis-fonts" "metropolis"       "middlebury-fonts"
+## [16] "middlebury"       "ninjutsu"         "rladies-fonts"   
+## [19] "rladies"          "robot-fonts"      "robot"           
+## [22] "rutgers-fonts"    "rutgers"          "shinobi"         
+## [25] "tamu-fonts"       "tamu"             "uo-fonts"        
+## [28] "uo"               "uol-fonts"        "uol"
+\end{verbatim}
+
+To change the your theme of your slides select one of the themes included in the list above and adjust the YAML front matter to include the css templates as shown here:
+
+\begin{verbatim}
+---
+output:
+  xaringan::moon_reader:
+    css: ["rutgers", "rutgers-fonts"]
+---
+\end{verbatim}
+
+Try out all of the themes until you find one that you like. If you can't find what you are looking for you can always create your own (more on this in Chapter 6)!
 
 \hypertarget{incorporating-r-code}{%
 \section{Incorporating R code}\label{incorporating-r-code}}
 
+Because your \texttt{xaringan} presentation uses the power of R Markdown you can analyse data and produce plots and tables as you normally would. In this section we will brielfy highlight a few \texttt{xaringan}-specific features related to knitr chunks and r code.
+
 \begin{itemize}
 \tightlist
 \item
-  analyses, plots and tables (some html widgets)
-\item
-  inline
-\item
-  knitr chunks
+  reuse knitr chunks, print plots later
 \item
   code highlighting (\texttt{*}, \texttt{\{\{\}\}}, and \texttt{\#\textless{}\textless{}}; \texttt{highlight.output})
+\item
+  include code in presenter notes
 \end{itemize}
 
 \hypertarget{summary}{%
 \section{Summary}\label{summary}}
+
+In this chapter you learned the basics of \texttt{xaringan}. This included the basics regarding getting started with your first presentation and implementing light customization to personalize your slides. You also learned some handy tricks related to using R code in your \texttt{xaringan} presentation. You are well on your way to becoming a presentation ninja. In the next chapter you will learn more about remark.js, the work engine under the hood of \texttt{xaringan}.
 
 \hypertarget{remarkjs}{%
 \chapter{remark.js}\label{remarkjs}}

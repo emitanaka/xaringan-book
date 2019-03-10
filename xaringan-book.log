@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.9.28)  9 MAR 2019 17:46
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2018.9.28)  10 MAR 2019 00:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1335,55 +1335,78 @@ LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <12> not available
 (Font)              Font shape `TU/lmtt/b/n' tried instead on input line 245.
 File: img/02_title-slide.png Graphic file (type bmp)
 <img/02_title-slide.png>
-[13]
-Underfull \vbox (badness 3460) has occurred while \output is active []
-
-[14]
+[13] [14]
 File: img/02_basics-slide-example.png Graphic file (type bmp)
 <img/02_basics-slide-example.png>
 [15]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+File: img/02_basics-alignment-example_1.png Graphic file (type bmp)
+<img/02_basics-alignment-example_1.png>
 [16]
+File: img/02_basics-alignment-example_2.png Graphic file (type bmp)
+<img/02_basics-alignment-example_2.png>
+
+Underfull \vbox (badness 1831) has occurred while \output is active []
+
+[17] [18]
+File: img/02_basics-comments-notes.png Graphic file (type bmp)
+<img/02_basics-comments-notes.png>
+[19]
 File: img/02_basics-two-column_1.png Graphic file (type bmp)
 <img/02_basics-two-column_1.png>
-[17]
 File: img/02_basics-two-column_2.png Graphic file (type bmp)
 <img/02_basics-two-column_2.png>
-[18] [19] [20
+[20] [21]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 560--560
+[]\TU/lmtt/m/n/10 knitr::include_graphics("https://www.rstudio.com/wp-content/u
+ploads/[] 
+ []
+
+File: img/02_basics-include-image.png Graphic file (type bmp)
+<img/02_basics-include-image.png>
+[22]
+File: img/02_basics-embed-vido.png Graphic file (type bmp)
+<img/02_basics-embed-vido.png>
+File: img/02_basics-embed-website.png Graphic file (type bmp)
+<img/02_basics-embed-website.png>
+File: img/02_basics-embed-shiny.png Graphic file (type bmp)
+<img/02_basics-embed-shiny.png>
+
+Underfull \vbox (badness 2846) has occurred while \output is active []
+
+[23] [24] [25] [26
 
 ]
 Chapter 3.
-[21] [22
+[27] [28
 
 ]
 Chapter 4.
-[23] [24
+[29] [30
 
 ]
 Chapter 5.
-[25] [26
+[31] [32
 
 ]
 Chapter 6.
-[27] [28
+[33] [34
 
 ]
 Chapter 7.
 No file xaringan-book.bbl.
-[29] [30
+[35] [36
 
 ]
 ! Undefined control sequence.
-l.548 \printindex
+l.730 \printindex
                   
 Here is how much of TeX's memory you used:
- 27367 strings out of 492960
- 488533 string characters out of 6133547
+ 27396 strings out of 492960
+ 489502 string characters out of 6133547
  706938 words of memory out of 5000000
- 31096 multiletter control sequences out of 15000+600000
+ 31118 multiletter control sequences out of 15000+600000
  539690 words of font info for 89 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  58i,8n,116p,1010b,605s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on xaringan-book.pdf (30 pages).
+Output written on xaringan-book.pdf (36 pages).
