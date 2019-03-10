@@ -110,7 +110,7 @@ You can explore the same example slides here:
 https://slides.yihui.name/xaringan/] 
 You should see something like this: 
 
-![title_slide](img/02_title-slide.png)
+![title_slide](img/02_title-slide.png){width=75%}
 
 Use the left and right arrow keys to navigate the slides. 
 There are a whole host of features at your finger tips, but we will only 
@@ -210,7 +210,7 @@ title slide and the beginning of slide \#2.]
 Feel free to copy this into your file and click "Knit". 
 The output should render like this: 
 
-![basics-slide-example](img/02_basics-slide-example.png)
+![basics-slide-example](img/02_basics-slide-example.png){width=75%}
 
 ### Alignment
 
@@ -237,7 +237,7 @@ Walk my dogs
 Create presentations in `xaringan`
 ```
 
-![basics-alignment-example_1](img/02_basics-alignment-example_1.png)
+![basics-alignment-example_1](img/02_basics-alignment-example_1.png){width=75%}
 
 Note: I removed the unordered list because they look rather odd when the 
 content is centered horizontally. Also, notice that there are two (2) spaces 
@@ -267,7 +267,7 @@ the subsection headers.
 - Create presentations in `xaringan`
 ```
 
-![basics-alignment-example_2](img/02_basics-alignment-example_2.png)
+![basics-alignment-example_2](img/02_basics-alignment-example_2.png){width=75%}
 
 
 ### Incremental slides
@@ -359,7 +359,7 @@ Here we add a comment and some notes to out slides:
 This is a presenter note that is accessed by pressing "p".
 ```
 
-![basics-comments-notes](img/02_basics-comments-notes.png)
+![basics-comments-notes](img/02_basics-comments-notes.png){width=75%}
 
 ### Multi-column slides
 
@@ -386,7 +386,7 @@ Right column information here.
 
 would render like this: 
 
-![basic-two-column-1](img/02_basics-two-column_1.png)
+![basic-two-column-1](img/02_basics-two-column_1.png){width=75%}
 
 As you can see, this divides the left column into approxametely 1/3 of the 
 slide width and the right column contains the remaining 2/3. 
@@ -408,7 +408,7 @@ Right column information here
 ]
 ```
 
-![basic-two-column-2](img/02_basics-two-column_2.png)
+![basic-two-column-2](img/02_basics-two-column_2.png){width=75%}
 
 ## Making it yours
 
@@ -479,7 +479,7 @@ vertical positions.
 Regardless of the method you choose, the outcome should look something like 
 this: 
 
-![basics-include-image](img/02_basics-include-image.png){width=50%}
+![basics-include-image](img/02_basics-include-image.png){width=75%}
 
 ### Embedding video, webpages, and shiny apps
 
@@ -496,8 +496,6 @@ embedding the url in an iframe as shown here:
 src="https://www.youtube.com/embed/G-lN8vWm3m0"></iframe>
 ```
 
-![basics-embed-vido](img/02_basics-embed-vido.png){width=50%}
-
 If you need to show part of a website in your presentation you can use the 
 same strategy. 
 For example, here I will embed the homepage of aspredicted.org: 
@@ -509,7 +507,8 @@ For example, here I will embed the homepage of aspredicted.org:
 height="500" width="100%"></iframe>
 ```
 
-![basics-embed-website](img/02_basics-embed-website.png){width=50%}
+![basics-embed-vido](img/02_basics-embed-vido.png){width=50%}
+![basics-embed-website](img/02_basics-embed-website.png){width=49.75%}
 
 It is even possible to embed a shiny app in your slides for interactive 
 demonstrations: 
@@ -520,7 +519,7 @@ demonstrations:
 <iframe src="https://jvcasillas.shinyapps.io/shiny_glm/"></iframe>
 ```
 
-![basics-embed-shiny](img/02_basics-embed-shiny.png){width=50%}
+![basics-embed-shiny](img/02_basics-embed-shiny.png){width=75%}
 
 
 ### Theme templates
